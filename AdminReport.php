@@ -71,7 +71,7 @@ function page_Special_AdminReport()
 		{
 			$email = getConfig('contact_email');
 			
-			if ( !is_array($result = arp_send_mail($email, "[{$_SERVER['HTTP_HOST']}] Website bug report", "Sent from IP: {$_SERVER['REMOTE_ADDR']}\n\n---------------------------\n$comment)")) )
+			if ( !is_array($result = arp_send_mail($email, "[{$_SERVER['HTTP_HOST']}] Website bug report", "Sent from IP: {$_SERVER['REMOTE_ADDR']}\n\n---------------------------\n$comment")) )
 			{
 				redirect(makeUrl($page), 'Report sent', 'Thank you, your report has been sent. Redirecting you back to the page...', 5);
 			}
